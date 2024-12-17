@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  body{
+    background-color: rgb(117, 111, 102);
+    white-space: initial;
+  }
+  header{
+    font-size: 50px;
+    margin: 0px;
+    padding: 0%;
+    text-align: center;
+  }
+  .container{
+    width: 700px;
+    height: 400px;
+    background-color: whitesmoke;
+    box-shadow: 0px 2px 20px 10px;
+    animation-name: con;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    overflow: hidden;
+    border-radius: 2%;
+    margin: 0 auto ;
+    display: flex;
+    background-color: black;
+  }
+  
+  .picture{
+    width: 40%;
+    height: 350px;
+    background-color: rgb(77, 74, 74);
+    display: inline-block;
+    border-radius: 5%;
+    margin: 3%;
+    margin-right: 0%;
+    background-image: url("IMG_20241112_231618.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .content{
+    margin-left: 0%;
+    margin: 3%;
+    width: 60%;
+    border-radius: 5%;
+    background-color: black;
+    color: antiquewhite;
+    height: 350px;
+  
+    
+  }
+  .container p{
+    padding: 20px;
+    word-wrap: break-word;
+  }
+@keyframes con {
+        0% {
+            width: 2px;
+            height: 0px;
+            background-color:black;
+            box-shadow:  0px 2px 20px 10px gold;
+        }
+        40%{
+          width: 700px;
+          height: 1px;
+          box-shadow:  0px 2px 20px 10px gold;
+
+          
+      }
+      65%{
+        box-shadow:  0px 2px 20px 10px black;
+
+      }
+        100%{
+            width: 700px;
+            height: 400px;
+
+        }
+
+    } 
+
+    .container1{
+      width: 800px;
+      height: auto;
+      margin: 2% auto;
+      display: flex;
+      justify-content: space-between;
+  
+  }
+  .profile{
+      width: 100px;
+      height: 100px;
+      
+      position: relative;
+      box-shadow: 0px 2px 20px 5px;
+     
+     
+  }
+  p{
+    text-overflow: ellipsis;
+    
+     
+  }
+  
+  .top{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(163, 218, 201);
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      align-items: end;
+      padding: 0%;
+      
+     
+    }
+
+    
+    .back{
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      z-index:2;
+      background-color: rgb(188, 132, 42);
+      transition: 0.4s;
+    }
+    .back:hover{
+      top:-20px;
+      left:-20px;
+    
+    }
+    .back img{
+      width: 100px;
+      height: 100px;
+    }
+.back img{
+  width: 100%;
+  height: 100%;
+}
+</style>
+<body>
+   <header>team</header>
+
+   <div class="container1">
+    <div class="profile" onclick="change('ganesh')">
+      <div class="top">Ganes M</div>
+
+      <div class="back"><img src="ganesh.jpg" alt=""></div>
+    </div>
+
+    <div class="profile" onclick="change('vinay')">
+      <div class="top">vinay B</div>
+      <div class="back"><img src="profile.jpg" alt=""></div>
+    </div>
+
+    <div class="profile" onclick="change('ganesh_y')">
+      <div class="top">ganesh y</div>
+      <div class="back"><img src="profile.jpg" alt=""></div>
+    </div>
+
+    <div class="profile" onclick="change('charan')" >
+      <div class="top">charan p</div>
+      <div class="back"><img src="profile.jpg" alt=""></div>
+    </div>
+
+    <div class="profile"  onclick="change('srinivas')">
+      <div class="top">srinivas</div>
+      <div class="back"><img src="profile.jpg" alt=""></div>
+    </div>
+   </div><br><br><br>
+
+   <div class="container">
+        <div class="picture"></div>
+        <div class="content">
+          <h2 class="name">Ganesh MATTAPARTHI</h2>
+          <p class="about">Hello, my name is Ganesh Mattaparthi, and I am currently in my 3rd year of pursuing a B.Tech degree in Artificial Intelligence and Data Science at KIET College, Andhra Pradesh. I have a strong technical background, particularly in web development with skills in HTML, CSS, JavaScript, and programming in Python. Alongside my technical expertise, I take pride in my soft skills, including effective communication and problem-solving abilities. I am passionate about leveraging my skills to contribute to innovative projects and thrive in collaborative environments. </p></div>
+
+   </div>
+<script>
+  let image = document.querySelector('.picture')
+  let name = document.querySelector('.name')
+  let about = document.querySelector('.about')
+
+ const container =document.querySelector('.container')
+
+  function change(x){
+    
+ 
+    if (x === "charan"){
+      name.innerHTML= 'CHARAN PERABATHULA';
+      about.innerHTML= 'Hello, my name is Charan perabathula, and I am currently in my 3rd year of pursuing a B.Tech degree in Artificial Intelligence and Data Science at KIET College, Andhra Pradesh. I have a strong technical background, particularly in web development with skills in HTML, CSS, JavaScript, and programming in Python. Alongside my technical expertise, I take pride in my soft skills, including effective communication and problem-solving abilities. I am passionate about leveraging my skills to contribute to innovative projects and thrive in collaborative environments.';
+      image.style.backgroundImage = "url('hulk.jpg')";  
+      image.style.backgroundSize = "cover";  
+      image.style.backgroundPosition = "center"; 
+      container.style.animation = "none"; // Reset animation
+      container.offsetHeight; // Trigger reflow
+      container.style.animation = "con 3s forwards"; // Reapply animation
+      
+  } 
+    else if (x === "ganesh"){
+        name.innerHTML= 'Ganesh Mattaparthi';
+        about.innerHTML= 'Hello, my name is Ganesh Mattaparthi, and I am currently in my 3rd year of pursuing a B.Tech degree in Artificial Intelligence and Data Science at KIET College, Andhra Pradesh. I have a strong technical background, particularly in web development with skills in HTML, CSS, JavaScript, and programming in Python. Alongside my technical expertise, I take pride in my soft skills, including effective communication and problem-solving abilities. I am passionate about leveraging my skills to contribute to innovative projects and thrive in collaborative environments.';
+        image.style.backgroundImage = "url('IMG_20241112_231618.jpg')";  
+        image.style.backgroundSize = "cover";  
+        image.style.backgroundPosition = "center"; 
+        container.style.animation = "none"; // Reset animation
+        container.offsetHeight; // Trigger reflow
+        container.style.animation = "con 3s forwards"; // Reapply animation
+        
+    } 
+    else if (x === "srinivas" ) {
+        
+    name.innerHTML= 'Srinivas Vakada';
+    about.innerHTML= 'Hello, my name is Ganesh Mattaparthi, and I am currently in my 3rd year of pursuing a B.Tech degree in Artificial Intelligence and Data Science at KIET College, Andhra Pradesh. I have a strong technical background, particularly in web development with skills in HTML, CSS, JavaScript, and programming in Python. Alongside my technical expertise, I take pride in my soft skills, including effective communication and problem-solving abilities. I am passionate about leveraging my skills to contribute to innovative projects and thrive in collaborative environments.';
+    image.style.backgroundImage = "url('hawkeye.jpg')";
+    image.style.backgroundSize = "cover";  
+    image.style.backgroundPosition = "center"; 
+    container.style.animation = "none"; // Reset animation
+    container.offsetHeight; // Trigger reflow
+    container.style.animation = "con 3s forwards";
+    } 
+    else if (x ==="ganesh_y") {
+        
+        name.innerHTML= 'Ganesh yalla';
+        about.innerHTML= 'Hello, my name is Ganesh YALLA, and I am currently in my 3rd year of pursuing a B.Tech degree in Artificial Intelligence and Data Science at KIET College, Andhra Pradesh. I have a strong technical background, particularly in web development with skills in HTML, CSS, JavaScript, and programming in Python. Alongside my technical expertise, I take pride in my soft skills, including effective communication and problem-solving abilities. I am passionate about leveraging my skills to contribute to innovative projects and thrive in collaborative environments.';
+        image.style.backgroundImage = "url('black panther.jpg')";  
+        image.style.backgroundSize = "cover";  
+        image.style.backgroundPosition = "center"; 
+        container.style.animation = "none"; // Reset animation
+        container.offsetHeight; // Trigger reflow
+        container.style.animation = "con 3s forwards";
+    } 
+    else if (x === "vinay") {
+    name.innerHTML= 'Vinay Basava';
+    about.innerHTML= 'Hello, my name is VINAY BASAVA, and I am currently in my 3rd year of pursuing a B.Tech degree in Artificial Intelligence and Data Science at KIET College, Andhra Pradesh. I have a strong technical background, particularly in web development with skills in HTML, CSS, JavaScript, and programming in Python. Alongside my technical expertise, I take pride in my soft skills, including effective communication and problem-solving abilities. I am passionate about leveraging my skills to contribute to innovative projects and thrive in collaborative environments.';
+    image.style.backgroundImage = "url('iron man.jpg')";  
+    image.style.backgroundSize = "cover";  
+    image.style.backgroundPosition = "center";
+    container.style.animation = "none"; // Reset animation
+        container.offsetHeight; // Trigger reflow
+        container.style.animation = "con 3s forwards"; 
+        
+    } 
+
+    
+    else {
+        image.style.backgroundColor = "black";
+        name.innerHTML= 'Ganesh MATTAPAERTHI';
+        about.innerHTML= '';
+        image.style.backgroundImage = "url('IMG_20241112_231309.jpg')"; 
+        image.style.backgroundSize = "cover"; 
+        image.style.backgroundPosition = "center";
+        container.style.animation = "none"; // Reset animation
+        container.offsetHeight; // Trigger reflow
+        container.style.animation = "con 3s forwards";  
+    }
+}
+</script>
+   
+</body>
+</html>
